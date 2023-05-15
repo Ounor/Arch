@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# 1
+mkdir -p attachments
+num_images=20
+for ((i=1; i<=num_images; i++))
+do
+  filename="attachments/image_$i.jpg"
+  curl "https://picsum.photos/800/400" -L > "$filename"
+  echo "№ $i - успех"
+done
+
+
+
+
+# 2
+
+# Удаляем директорию attachments со всем ее содержимым
+rm -r attachments
+
+echo "Загруженные изображения удалены."
